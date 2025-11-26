@@ -7,7 +7,7 @@ An NPM module for your websites that logs webpage visits to your API logger. It 
 Demo:
 https://webpagelogger.myridia.com
 
-#Usage:
+## Usage:
 
 Add a script import tag to your project:
 
