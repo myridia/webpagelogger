@@ -1,14 +1,11 @@
 # Webpagelogger
 
-NPM module for your websites what logs the visit of webpages to your API logger.
-It sends per POST all possible info what can be gathered from JavaScript including the unique JavaScript fingerprint to your API.
-The content data is sent asynchronous via POST in a JSON format.
+An NPM module for your websites that logs webpage visits to your API logger. It asynchronously sends a JSON payload via POST, containing all discernible JavaScript data, including a unique JavaScript fingerprint, to your API upon each visit.
 
 
 
 Demo:
-https://webpagelogger.calantas.org
-
+https://webpagelogger.myridia.com
 
 #Usage:
 
@@ -20,7 +17,7 @@ Add a script import tag to your project:
 
 Add the below to your code declaration:
 
-example:
+example without your page:
 
 ```js
 
@@ -36,5 +33,73 @@ window.onload = async function () {
 
 ```
 
-Inter Used Javascript Fingerprint 
 
+example with your page filter:
+
+```js
+
+window.onload = async function () {
+ let wpl = new Webpagelogger({
+     "log_api": "http://couchdb.foo.com/logger", // required  
+	 "log_data": "json",  // json(default) or  x-www-form-urlencoded 
+	 "log_method": "POST" // POST(default) or PUT(not supported yet)
+	 "page": "example.com/category/page/
+	 });
+ await wpl.logit();
+};
+
+```
+
+
+<a name="module_Webpagelogger"></a>
+
+## Webpagelogger
+GPL licenses
+A module for Webpagelogger
+
+
+* [Webpagelogger](#module_Webpagelogger)
+    * [module.exports#post_json(url, _data)](#exp_module_Webpagelogger--module.exports+post_json) ⏏
+    * [module.exports#post_x_www_form_urlencoded(url, doc)](#exp_module_Webpagelogger--module.exports+post_x_www_form_urlencoded) ⏏
+    * [module.exports#pad(number)](#exp_module_Webpagelogger--module.exports+pad) ⇒ <code>str</code> ⏏
+    * [module.exports#help()](#exp_module_Webpagelogger--module.exports+help) ⏏
+    * [module.exports#logit()](#exp_module_Webpagelogger--module.exports+logit) ⏏
+
+<a name="exp_module_Webpagelogger--module.exports+post_json"></a>
+
+### module.exports#post\_json(url, _data) ⏏
+**Kind**: Exported function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>str</code> | url |
+| _data | <code>object</code> | data |
+
+<a name="exp_module_Webpagelogger--module.exports+post_x_www_form_urlencoded"></a>
+
+### module.exports#post\_x\_www\_form\_urlencoded(url, doc) ⏏
+**Kind**: Exported function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>str</code> | url |
+| doc | <code>object</code> | doc |
+
+<a name="exp_module_Webpagelogger--module.exports+pad"></a>
+
+### module.exports#pad(number) ⇒ <code>str</code> ⏏
+**Kind**: Exported function  
+**Returns**: <code>str</code> - - number  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| number | <code>str</code> | number |
+
+<a name="exp_module_Webpagelogger--module.exports+help"></a>
+
+### module.exports#help() ⏏
+**Kind**: Exported function  
+<a name="exp_module_Webpagelogger--module.exports+logit"></a>
+
+### module.exports#logit() ⏏
+**Kind**: Exported function  
