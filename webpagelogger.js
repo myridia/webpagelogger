@@ -13,6 +13,8 @@ module.exports = class Webpagelogger {
     this.log_method = "POST";
     this.log_api = false;
     this.log_data = "json";
+    this.page = window.location.pathname;
+
     if (obj.hasOwnProperty("log_api")) {
       this.log_api = obj.log_api;
     }
@@ -27,6 +29,9 @@ module.exports = class Webpagelogger {
     }
     if (obj.hasOwnProperty("logger")) {
       this.logger = obj.logger;
+    }
+    if (obj.hasOwnProperty("page")) {
+      this.page = obj.page;
     }
   }
 
@@ -121,7 +126,7 @@ module.exports = class Webpagelogger {
       timeOpened: _date,
       timezone: _date.getTimezoneOffset() / 60,
 
-      pageon: window.location.pathname,
+      pageon: this.page,
       referrer: document.referrer,
       previous_sites: history.length,
 
