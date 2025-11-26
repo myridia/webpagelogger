@@ -7,8 +7,7 @@ The content data is sent asynchronous via POST in a JSON format.
 
 
 Demo:
-https://webpagelogger.calantas.org
-
+https://webpagelogger.myridia.com
 
 #Usage:
 
