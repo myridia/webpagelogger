@@ -1,8 +1,6 @@
 # Webpagelogger
 
-NPM module for your websites what logs the visit of webpages to your API logger.
-It sends per POST all possible info what can be gathered from JavaScript including the unique JavaScript fingerprint to your API.
-The content data is sent asynchronous via POST in a JSON format.
+An NPM module for your websites that logs webpage visits to your API logger. It asynchronously sends a JSON payload via POST, containing all discernible JavaScript data, including a unique JavaScript fingerprint, to your API upon each visit.
 
 
 
